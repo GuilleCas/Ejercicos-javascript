@@ -1,1 +1,3 @@
 # Ejercicos-javascript
+
+LISTA 1 DE EJERCICIOS DE ALGORITMOS
