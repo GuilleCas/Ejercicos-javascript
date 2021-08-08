@@ -20,7 +20,7 @@
     <div>
         <form>
             <label>Sueldo</label> <br>
-            <input type="number" id="Sueldo"> <br> 
+            <input type="number" id="Sueldo"value="0"> <br> 
             <button type="button" onclick="mostrar();">Calcular</button>
         </form>
     </div>
@@ -28,15 +28,16 @@
         <p>Descuento y Sueldo neto</p>
         <p id="Descuento"></p>
         <p id="Sueldo_Neto"></p>
-    </div>
-    <script>
+    </div>    
+</body>
+<script>
         function mostrar()
         {
            var descuento,neto;
            var sueldo = parseFloat(document.getElementById('Sueldo').value);
            if(sueldo<= 1000)
            {
-               descuento = sacarporcentaje(10,sueldo);
+               descuento = sacarporcentaje(sueldo,10);
                neto=sueldo-descuento;
            }
            else if(sueldo>1000 && sueldo<=2000)
@@ -53,5 +54,4 @@
            document.getElementById("Sueldo_Neto").innerHTML = neto;
         }
     </script>
-</body>
 </html>
