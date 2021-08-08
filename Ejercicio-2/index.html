@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Porcentaje.js"></script>
     <title>Ejercicio 2</title>
 </head>
 <body>
@@ -19,13 +20,38 @@
     <div>
         <form>
             <label>Sueldo</label> <br>
-            <input type="number" id="sueldo"> <br> 
-            <button type="button" onclick="calcular_descuento();">Calcular</button>
+            <input type="number" id="Sueldo"> <br> 
+            <button type="button" onclick="mostrar();">Calcular</button>
         </form>
     </div>
     <div>
         <p>Descuento y Sueldo neto</p>
-        <p id="Total"></p>
+        <p id="Descuento"></p>
+        <p id="Sueldo_Neto"></p>
     </div>
+    <script>
+        function mostrar()
+        {
+           var descuento,neto;
+           var sueldo = parseFloat(document.getElementById('Sueldo').value);
+           if(sueldo<= 1000)
+           {
+               descuento = sacarporcentaje(10,sueldo);
+               neto=sueldo-descuento;
+           }
+           else if(sueldo>1000 && sueldo<=2000)
+           {
+               descuento = sacarporcentaje(15,sueldo);
+               neto=sueldo-descuento;
+           }
+           else
+           {
+               descuento = sacarporcentaje(18,sueldo);
+               neto=sueldo-descuento;
+           }
+           document.getElementById("Descuento").innerHTML = descuento;
+           document.getElementById("Sueldo_Neto").innerHTML = neto;
+        }
+    </script>
 </body>
 </html>
