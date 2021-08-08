@@ -20,11 +20,32 @@
     <div>
         <form action="">
             <label for="">Horas trabajadas</label> <br>
-            <input type="number" id="Horas" value="0"> <br> 
+            <input type="number" id="Horas"> <br> 
              <label for="">Tarifa</label> <br>
-            <input type="number" id="Tarifa" value="0"> <br> 
-            <input type="submit" value="Calcular">
+            <input type="number" id="Tarifa"> <br> 
+            <button type="button" onclick="calcular_salario();">Calcular</button>
         </form>
     </div>
+    <div>
+        <p>Salario</p>
+        <p id="Total"></p>
+    </div>
+    <script>
+        function calcular_salario()
+        {
+           var total;
+           var horas = parseFloat(document.getElementById('Horas').value);
+           var tarifa = parseFloat(document.getElementById('Tarifa').value);
+           if(horas>40)
+           {
+            total=((horas-40)*((tarifa)+(tarifa/2)))+(40*tarifa);
+            }
+            else
+            {
+            total=horas*tarifa;
+            }
+            document.getElementById("Total").innerHTML=total;
+        }
+    </script>
 </body>
 </html>
