@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <header>
+        Ejercicio 4
+    </header>
+    <section>
+        Escribir un algoritmo que lea un tiempo en segundos y que calcule los
+        segundos restantes que le correspondan para convertirse exactamente en
+        minutos.
+    </section>
+    <div>
+        <form>
+            <label>Cantidad:</label>
+            <input type="number" id="Minutos"> <br>
+            <button type="button" onclick="convertir_dias();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>Dias,horas y minutos: </p>
+        <p id="Days"></p>
+    </div>
+    <script>
+        function convertir_dias()
+        {
+            var minutos = parseFloat(document.getElementById('Minutos').value);
+            var dias = Math.floor(minutos/1440);
+            var horas = Math.floor((minutos - (dias*1440))/60);
+            var minutes = Math.floor( ((minutos - ((dias*1440))) - (horas*60)) );
+            document.getElementById("Days").innerHTML = dias +' : '+ horas + ' : '+ minutes;
+        }
+    </script>
+</body>
+</html>
