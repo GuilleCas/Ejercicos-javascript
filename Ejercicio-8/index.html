@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <head>
+        <h2>Ejercicio 8</h2>
+    </head>
+    <section>
+        Escribir el algoritmo que muestre el mensaje de acuerdo a la edad
+        ingresada: Si la edad es de 0 a 10 años “niño”, si la edad es de 11 a 14
+        años “púber” , si la edad es de 15 a 18 años “ adolescente” , si la edad
+        es de 19 a 25 años “joven” , si la edad es de 26 a 65 años “ adulto” , si
+        la edad es mayor de 65 “anciano”.  
+    </section>
+    <div>
+        <form>
+            <label for="Fedad">Edad: </label> <br>
+            <input type="number" id="Edad" name="Fedad"> <br>
+            <button type="button" onclick="Imprimir();">Mensaje</button> <br>
+        </form>
+    </div>
+    <div>
+        <p>Mensaje mostrado: </p>
+        <p id="Mensaje"></p>
+    </div>
+    <script>
+        function Imprimir()
+        {
+            var edad = parseInt(document.getElementById('Edad').value);
+            if(edad<=10)
+            {
+                document.getElementById("Mensaje").innerHTML="Niño";
+            }
+            else if(edad<=14)
+            {
+                document.getElementById("Mensaje").innerHTML="púber";
+            }
+            else if(edad<=18)
+            {
+                document.getElementById("Mensaje").innerHTML="adolescente";
+            }
+            else if (edad<=25)
+            {
+                document.getElementById("Mensaje").innerHTML="joven";
+            }
+            else if (edad<=65)
+            {
+                document.getElementById("Mensaje").innerHTML="adulto";
+            }
+            else
+            {
+                document.getElementById("Mensaje").innerHTML="anciano";
+            }
+        }
+    </script>
+</body>
+</html>
