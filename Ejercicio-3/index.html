@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Porcentaje.js"></script>
+    <title>Ejercio 3</title>
+</head>
+<body>
+    <header>
+        Ejercicio 3
+    </header>
+    <section>
+        Escribir un algoritmo que lea una cantidad y calcule el descuento
+        considerando que si la cantidad dada está por encima de 100 el descuento
+        es el 10% y si está por debajo de 100 el descuento es el 2%.
+    </section>
+    <div>
+        <form>
+            <label>Cantidad:</label>
+            <input type="number" id="Cantidad"> <br>
+            <button type="button" onclick="sacardescuento();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>Descuento:</p>
+        <p id="Descuento"></p>
+    </div>
+    <script>
+        function sacardescuento()
+        {
+            var descuento,total;
+            var cantidad = parseFloat(document.getElementById('Cantidad').value);
+            if(cantidad<100)
+            {
+                descuento = sacarporcentaje(cantidad,2);
+                total = cantidad-descuento;
+            }
+            else
+            {
+                descuento = sacarporcentaje(cantidad,10);
+                total = cantidad-descuento;
+            }
+            document.getElementById("Descuento").innerHTML = total;
+        }
+    </script>
+</body>
+</html>
