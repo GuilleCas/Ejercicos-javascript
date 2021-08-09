@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <header>
+        <h2>Ejercicio 7</h2>
+    </header>
+    <section>
+        Se trata de escribir el algoritmo que permita emitir la factura
+        correspondiente a una compra de un articulo determinado, del que se
+        adquieren una o varias unidades. El IVA es del 15% y si el precio
+        bruto( precio venta mas IVA) es mayor de 50.00 pesos se debe realizar
+        un descuento del 5%.
+    </section>
+    <div>
+        <form>
+            <label for="fprecio">Precio: </label><br>
+            <input type="number" id="Precio" name="fprecio"> <br>
+            <label for="fcantidad">Cantidad: </label> <br>
+            <input type="number" id="Cantidad" name="fcantidad"> <br>
+            <button type="button" onclick="Imprimir();">Imprime tu Factura</button>
+        </form>
+    </div>
+    <div>
+        <p>Factura</p>
+        <p id="ImpFactura"></p>
+    </div>
+    <script>
+        function Imprimir()
+        {
+            var precio,cantidad,venta,IVA,bruto,descuento,total;
+            precio = parseFloat(document.getElementById('Precio').value);
+            cantidad = parseFloat(document.getElementById('Cantidad').value);
+            venta = precio * cantidad;
+            IVA = venta * 0.15;
+            bruto = venta + IVA;
+            if(bruto >= 50)
+            {
+                descuento = (bruto*5)/100 
+            }
+            else
+            {
+                descuento = 0;
+            }
+            total = bruto - descuento;
+            document.getElementById("ImpFactura").innerHTML= venta + ' , '+ IVA + ' , ' + bruto + ' , ' + descuento + ' , ' + total;
+        }
+    </script>
+</body>
+</html>
