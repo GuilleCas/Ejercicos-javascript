@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <header>
+        Ejercicio 4
+    </header>
+    <section>
+        Escribir un algoritmo que lea un tiempo en segundos y que calcule los
+        segundos restantes que le correspondan para convertirse exactamente en
+        minutos.
+    </section>
+    <div>
+        <form>
+            <label>Cantidad:</label>
+            <input type="number" id="Segundos"> <br>
+            <button type="button" onclick="convertir_minutos();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>Minutos:</p>
+        <p id="Minutos"></p>
+    </div>
+    <script>
+        function convertir_minutos()
+        {
+            var segundos = parseFloat(document.getElementById('Segundos').value);
+            var minutes = Math.floor(segundos/60);
+            var s = segundos-(minutes*60);
+            document.getElementById("Minutos").innerHTML = minutes +' : '+ s;
+        }
+    </script>
+</body>
+</html>
