@@ -32,30 +32,32 @@
         function Imprimir()
         {
             var edad = parseInt(document.getElementById('Edad').value);
+            var mensaje
             if(edad<=10)
             {
-                document.getElementById("Mensaje").innerHTML="Niño";
+                mensaje = 'niño';
             }
             else if(edad<=14)
             {
-                document.getElementById("Mensaje").innerHTML="púber";
+                mensaje = 'púber';
             }
             else if(edad<=18)
             {
-                document.getElementById("Mensaje").innerHTML="adolescente";
+                mensaje = 'adolescente';
             }
             else if (edad<=25)
             {
-                document.getElementById("Mensaje").innerHTML="joven";
+                mensaje = 'joven';
             }
             else if (edad<=65)
             {
-                document.getElementById("Mensaje").innerHTML="adulto";
+                mensaje = 'adulto';
             }
             else
             {
-                document.getElementById("Mensaje").innerHTML="anciano";
+                mensaje = 'anciano';
             }
+            document.getElementById("Mensaje").innerHTML=mensaje;
         }
     </script>
 </body>
