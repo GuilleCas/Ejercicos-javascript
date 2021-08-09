@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Porcentaje.js"></script>
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <header>
+        Ejercicio 2
+    </header>
+    <section>
+        Escribir un algoritmo que lea las horas trabajadas de una persona y la
+        tarifa de pago para calcular su salario e imprimirlo.
+    </section>
+    <div>
+        <form>
+            <label>Horas trabajadas:</label> <br>
+            <input type="number" id="Horas"> <br> 
+            <label>Tarifa de Pago:</label> <br>
+            <input type="number" id="Tarifa"> <br> 
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>Salario</p>
+        <p id="Salario"></p>
+    </div>    
+</body>
+<script>
+        function calcular()
+        {
+           var total;
+           var horas = parseFloat(document.getElementById('Horas').value);
+           var tarifa = parseFloat(document.getElementById('Tarifa').value);
+           document.getElementById("Salario").innerHTML = horas*tarifa;
+        }
+    </script>
+</html>
