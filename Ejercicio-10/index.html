@@ -39,18 +39,26 @@
             var plado = parseInt(document.getElementById('PLado').value);
             var slado = parseInt(document.getElementById('SLado').value);
             var tlado = parseInt(document.getElementById('TLado').value);
-            if(plado == slado || slado== tlado || plado == tlado)
+            if((plado<(slado + tlado)) && (slado<(plado+tlado))&&(tlado<(plado+slado)))
             {
-                mensaje = 'Equilatero';
+                if(plado == slado || slado== tlado || plado == tlado)
+                {
+                    mensaje = 'Equilatero';
+                }
+                else if(plado == slado || slado == tlado || plado == tlado)
+                {
+                    mensaje = 'Isoceles';
+                }
+                else if(plado!=slado && slado != tlado && plado !=tlado)
+                {
+                    mensaje = 'Escaleno';
+                }
             }
-            else if(plado == slado || slado == tlado || plado == tlado)
+            else
             {
-                mensaje = 'Isoceles';
+                mensaje = 'no forman un triangulo';
             }
-            else if(plado!=slado && slado != tlado && plado !=tlado)
-            {
-                mensaje = 'Escaleno';
-            }
+            
             document.getElementById('Type').innerHTML=mensaje;
         }
     </script>
