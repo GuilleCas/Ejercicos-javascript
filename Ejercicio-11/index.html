@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Porcentaje.js"></script>
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <head>
+        <h2>Ejercicio 11</h2>
+    </head>
+    <section>
+        Una tienda se dedica a la venta de computadoras, cada vendedor
+        tiene un sueldo mensual pero además de su sueldo gana una comisión por
+        venta: Si el monto de venta es mayor de 10,000 la comisión será del 15%.
+        Si el monto de venta es mayor o igual a 5,000 y menor de 10,000 la
+        comisión es del 5%. Si el monto de la venta es menor que 5,000 no tiene
+        comisión. Escribir un algoritmo que calcule el sueldo total de cada
+        vendedor.
+    </section>
+    <div>
+        <form>
+            <label>Sueldo: </label> <br>
+            <input type="number" id="Sueldo"> <br>
+            <label>Monto Venta: </label> <br>
+            <input type="number" id="Precio"> <br>
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>Sueldo Total:</p>
+        <p id="Total"></p>
+    </div>
+    <script>
+        function calcular()
+        {
+            var comision,total;
+            var sueldo = parseFloat(document.getElementById('Sueldo').value);
+            var precio = parseFloat(document.getElementById('Precio').value);
+            if(precio>=5000 && precio<10000)
+            {
+                comision = sacarporcentaje(5,precio);
+                total = sueldo + comision;
+            }
+            else if(precio > 1000)
+            {
+                comision = sacarporcentaje(15,precio);
+                total = sueldo + comision;
+            }
+            else if(precio < 5000)
+            {
+                total = sueldo;
+            }
+            document.getElementById("Total").innerHTML = total;
+        }
+    </script>
+</body>
+</html>
