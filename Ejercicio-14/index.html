@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Porcentaje.js"></script>
+    <title>Ejercicio 14</title>
+</head>
+<body>
+    <header>
+        <h2>
+            Ejercicio 14
+        </h2>
+    </header>
+    <section>
+        <b>"TIENDAS PATITO"</b>  se encuentra de aniversario y ha programado una
+        serie de ofertas con la finalidad de brindar facilidades a sus clientes y
+        al a vez de incrementar sus ventas. Estas ofertas se basan específicamente
+        en un porcentaje de descuento sobre el total de compra el cual varia de
+        acuerdo al monto. Por un monto mayor o igual a $500 se hará un descuento
+        del 30%. Por un monto menor de $500 pero mayor o igual a 200 se hará un
+        descuento del 20%.Por un monto menor de $200 pero mayor o igual a 100 se
+        hará un descuento del 10%. Escribir un algoritmo que calcule la cantidad
+        total a pagar de una compra.
+    </section>
+    <div>
+        <form>
+            <label>Total de compra</label> <br>
+            <input type="number" id="Costo"> <br>
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>RESULTADO:</p>
+        <p id="Total"></p>
+    </div>
+    <script>
+        function calcular()
+        {
+            var descuento,total;
+            var costo = parseFloat(document.getElementById('Costo').value);
+            if(costo>=500)
+            {
+                descuento = sacarporcentaje(costo,30);
+                total=costo-descuento;
+            }
+            else if(costo<500 && costo>=200)
+            {
+                descuento = sacarporcentaje(costo,20);
+                total=costo-descuento;
+            }
+            else if(costo<200 && costo>=100)
+            {
+                descuento = sacarporcentaje(costo,10);
+                total=costo-descuento;
+            }
+            document.getElementById('Total').innerHTML=total;
+        }
+    </script>
+</body>
+</html>
