@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <header>
+        <h2>
+            Ejercicio 13
+        </h2>
+    </header>
+    <section>
+        Escribir un algoritmo que calcule las raíces de una ecuación
+        cuadrática cuya forma canónica es:
+        Ax**2 + By + C = 0
+        Solo se calcularán raíces reales. si el discriminante en menor de 0,
+        imprimir un mensaje que indique que existen dos raíces imaginarias. Los
+        coeficientes A,B,C serán ingresados.
+    </section>
+    <div>
+        <form>
+            <label>Coeficiente A</label> <br>
+            <input type="number" id="A"> <br>
+            <label>Coeficiente B</label> <br>
+            <input type="number" id="B"> <br>
+            <label>Coeficiente C</label> <br>
+            <input type="number" id="C"> <br>
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>RESULTADO:</p>
+        <p id="Total"></p>
+    </div>
+    <script>
+        function calcular()
+        {
+            var D;
+            a = parseFloat(document.getElementById('A').value);
+            b = parseFloat(document.getElementById('B').value);
+            c = parseFloat(document.getElementById('C').value);
+            //calculamos discriminante para saber si son reales
+            D=(b**2)-(4*a*c);
+            if(D<=0)
+            {
+                document.getElementById('Total').innerHTML='ERROR';
+            }
+            else
+            {
+                //Usamos la formula para calcular las raices de X y Y
+                var X = ((-b+(D**5))/(2*a));
+                var Y = ((-b+(D**5)/(2*a)));
+                //Imprimimos el resultado
+                document.getElementById('Total').innerHTML = X + ' , ' + Y;
+            }   
+        }
+    </script>
+</body>
+</html>
