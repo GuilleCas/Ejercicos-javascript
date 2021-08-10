@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <header>
+        <h2>Ejercicio 15</h2>
+    </header>
+    <section>
+        <p>Escribir un algoritmo que permita escoger en un conjunto de números
+        naturales: </p> 
+        <ul>
+            <li>Cuáles son menores que 15.</li>
+            <li>Cuáles son mayores de 50.</li>
+            <li>Cuáles están comprendidos entre 25 y 50.</li>
+        </ul>
+        <p>El algoritmo termina con el ingreso de un número negativo.</p>
+    </section>
+    <div>
+        <form>
+            <label>Escriba un número: </label>
+            <input type="text" id="texto" value=" ">
+            <button type="button" onclick="agregarElemento();">Ingresar</button>
+            <!--<button type="button" onclick="mostrarArreglo();">Mostrar Lista</button>-->
+        </form>
+    </div>
+    <div>
+        <!--<p>La lista es:</p>
+        <p id="resultado"></p>-->
+        <p>Los menor a 15 son: </p>
+        <p id="m15"></p>
+        <p>Los mayores a 50 son: </p>
+        <p id="m50"></p>
+        <p>Los valores que estan entre 25 y 50 son: </p>
+        <p id="entre"></p>
+    </div>
+    <script>
+        window.onload = function()
+        {
+            window.me15 = [];
+            window.ma50 = [];
+            window.entre = [];
+            window.datos = [];
+        }
+        //Agrega un elemento al arreglo datos[]
+        function agregarElemento()
+        {
+            let dato; 
+            dato = document.getElementById('texto').value;
+            if(dato < 0)
+            {
+                window.alert("Ingresa un numero positivo");
+                document.getElementById('m15').innerHTML = '';
+                document.getElementById('m50').innerHTML = '';
+                document.getElementById('entre').innerHTML = '';
+                window.datos = [];
+                window.me15 = [];
+                window.ma50 = [];
+                window.entre = [];
+            }
+            else
+            {
+                datos.push(dato);
+                if(dato<15)
+                {
+                    me15.push(dato);
+                    let resultado = document.getElementById('m15');
+                    resultado.innerHTML = '';
+                    for (const dato of me15) 
+                    {
+                        let datoParrafo = document.createElement('p');
+                        datoParrafo.innerText = dato;
+                        resultado.appendChild(datoParrafo);
+                    }
+                }
+                else if(dato>50)
+                {
+                    ma50.push(dato);
+                    let resultado = document.getElementById('m50');
+                    resultado.innerHTML = '';
+                    for (const dato of ma50) 
+                    {
+                        let datoParrafo = document.createElement('p');
+                        datoParrafo.innerText = dato;
+                        resultado.appendChild(datoParrafo);
+                    }
+                }
+                else if(dato>=25 && dato<=50)
+                {
+                    entre.push(dato);
+                    let resultado = document.getElementById('entre');
+                    resultado.innerHTML = '';
+                    for (const dato of entre) 
+                    {
+                        let datoParrafo = document.createElement('p');
+                        datoParrafo.innerText = dato;
+                        resultado.appendChild(datoParrafo);
+                    }
+                }
+            }
+        }
+        /*Mostrar el arreglo completo
+        function mostrarArreglo()
+        {
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = '';
+
+            for (const dato of datos) 
+            {
+                let datoParrafo = document.createElement('p');
+                datoParrafo.innerText = dato;
+
+                resultado.appendChild(datoParrafo);
+            }
+        }
+        */
+    </script>
+</body>
+</html>
