@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <header>
+        <h2>Ejercicio 12</h2>
+    </header>
+    <section>
+        <p>
+            Katthy organiza una fiesta en la cual una computadora controla el
+            ingreso mediante 5 claves. Si se ingresa al menos una clave incorrecta la
+            computadora imprimirá "TE EQUIVOCASTE DE FIESTA" y no permitirá el
+            ingreso. Si las 5 claves son correctas imprimirá "BIENVENIDO A LA FIESTA".
+            Escribir un algoritmo que realice lo anterior. <br> 
+            <b>Las claves son:</b>
+        </p>
+        <ol>
+            <li>"TIENES"</li>
+            <li>"QUE SER"</li>
+            <li>"INVITADO"</li>
+            <li>"PARA"</li>
+            <li>"INGRESAR"</li>
+        </ol>
+    </section>
+    <div>
+        <form>
+            <label>Escribe clave: </label> <br>
+            <label>Clave 1: </label> <br>
+            <input type="text" id="Clave1"> <br>
+            <label>Clave 2: </label> <br>
+            <input type="text" id="Clave2"> <br>
+            <label>Clave 3: </label> <br>
+            <input type="text" id="Clave3"> <br>
+            <label>Clave 4: </label> <br>
+            <input type="text" id="Clave4"> <br>
+            <label>Clave 5: </label> <br>
+            <input type="text" id="Clave5"> <br>
+            <button type="button" onclick="validar();">ENTRAR</button>
+        </form>
+    </div>
+    <div>
+        <p>Mensaje</p>
+        <p id="mensaje"></p>
+    </div>
+    <script>
+        function validar()
+        {
+            var c1 = document.getElementById("Clave1").value;
+            var c2 = document.getElementById("Clave2").value;
+            var c3 = document.getElementById("Clave3").value;
+            var c4 = document.getElementById("Clave4").value;
+            var c5 = document.getElementById("Clave5").value;
+            if(c1 == 'TIENES' && c2 == 'QUE SER' && c3 == 'INVITADO' && c4 == 'PARA' && c5 == 'INGRESAR')
+            {
+                document.getElementById("mensaje").innerHTML = 'BIENVENIDO A LA FIESTA';
+            }
+            else
+            {
+                document.getElementById("mensaje").innerHTML = 'TE EQUIVOCASTE DE FIESTA';
+            }
+        }
+    </script>
+</body>
+</html>
