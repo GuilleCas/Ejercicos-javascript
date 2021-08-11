@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+</head>
+<body>
+    <header>
+        <h2>Ejercicio 16</h2>
+    </header>
+    <section>
+        Calcular mediante un algoritmo repetitivo la suma de los N primeros
+        números naturales.
+    </section>
+    <div>
+        <form>
+            <label>Escriba un número: </label>
+            <input type="text" id="N" value=" ">
+            <button type="button" onclick="calcularsuma();">Ingresar</button>
+        </form>
+    </div>
+    <div>
+        <p>La suma es:</p>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        window.onload = function()
+        {
+            window.dato = [];
+        }
+        function calcularsuma()
+        {
+            var N;
+            N = parseInt(document.getElementById('N').value);
+            if(N < 0)
+            {
+                window.alert("Error , ingresa un número positivo");
+                window.dato = [];
+            }
+            else
+            {
+                dato.push(N);
+                var suma = 0;
+                
+                for(var i = 0; i < dato.length ; i++)
+                {
+                    suma += dato[i];
+                }
+                document.getElementById('resultado').innerHTML = suma;
+            }
+        }
+    </script>
+</body>
+</html>
