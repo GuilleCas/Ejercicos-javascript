@@ -39,6 +39,7 @@
         <p id="entre"></p>
     </div>
     <script>
+        //Evita que cuando refresque la página elimine los datos ya guardados
         window.onload = function()
         {
             window.me15 = [];
@@ -54,9 +55,11 @@
             if(dato < 0)
             {
                 window.alert("Ingresa un numero positivo");
+                //Vacia los campos de los parrafos
                 document.getElementById('m15').innerHTML = '';
                 document.getElementById('m50').innerHTML = '';
                 document.getElementById('entre').innerHTML = '';
+                //Vacia la lista evitando que continue el programa
                 window.datos = [];
                 window.me15 = [];
                 window.ma50 = [];
@@ -64,6 +67,7 @@
             }
             else
             {
+                //Ingresa el dato a la lista datos
                 datos.push(dato);
                 if(dato<15)
                 {
