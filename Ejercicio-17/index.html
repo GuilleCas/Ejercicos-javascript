@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+<body>
+    <body>
+        <header>
+           <h2>Ejercicio 17</h2> 
+        </header>
+        <section>
+            Modificar el ejercicio 1 para obtener la suma de los salarios de 200
+            trabajadores.
+        </section>
+        <div>
+            <form>
+                <label>Salrio: </label>
+                <input type="text" id="N" value=" ">
+                <button type="button" onclick="Sumar();">Ingresar</button>
+            </form>
+        </div>
+        <div>
+            <p>Persona:</p>
+            <p id="posi"></p>
+            <p>La suma de los salarios es:</p>
+            <p id="salario"></p>
+            
+        </div>
+    </body>
+    <script>
+        window.onload = function () {
+            window.dato = [];
+            window.posi = 0;
+        }
+        function Sumar() {
+            var N = parseInt(document.getElementById('N').value);
+            if (N < 0 || posi > 200) {
+                window.alert("Error");
+                window.dato = [];
+                window.posi = 0;
+            }else if(N<=200){
+                dato.push(N);
+                posi = 1 + posi;
+                
+                var suma = 0;
+                for (var i = 0; i < dato.length; i++) {
+                    suma += dato[i];
+                }
+                document.getElementById('salario').innerHTML = suma;
+                document.getElementById('posi').innerHTML = posi;
+            }
+            
+        }
+    </script>
+</body>
+</html>
