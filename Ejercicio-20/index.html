@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20</title>
+</head>
+<body>
+    <header>
+        <h2>Ejercicio 20</h2>
+    </header>
+    <section>
+        Realizar un algoritmo que permita pedir 50 números naturales y
+        determine e imprima cuántos son pares, impares, positivos y negativos.
+    </section>
+    <div>
+        <form>
+            <label>Escribe un numéro</label>
+            <input type="number" id="numero"> <br>
+            <button type="button" onclick="determinar();">Determinar</button>
+        </form>
+    </div>
+    <div>
+        <p>Números pares</p>
+        <p id="par"></p>
+        <p>Números impares</p>
+        <p id="impar"></p>
+        <p>Números positivos</p>
+        <p id="positivo"></p>
+        <p>Números negativos</p>
+        <p id="negativo"></p>
+    </div>
+    <script>
+        window.onload = function ()
+        {
+            window.numeros   = [];
+            window.pares     = [];
+            window.impares   = [];
+            window.positivos = [];
+            window.negativos = [];
+        }
+        function determinar()
+        {
+            let numero;
+            numero = parseInt(document.getElementById('numero').value);
+
+            numeros.push(numero);
+            
+            if(numero<0)
+            {
+                negativos.push(numero);
+
+                document.getElementById('negativo').innerHTML = negativos.length;
+            }
+            else
+            {
+                positivos.push(numero);
+
+                document.getElementById('positivo').innerHTML = positivos.length;
+            }
+
+            if(numero%2 == 0)
+            {
+                pares.push(numero);
+
+                document.getElementById('par').innerHTML = pares.length;
+            }
+            else
+            {
+                impares.push(numero);
+
+                document.getElementById('impar').innerHTML = impares.length;
+            }
+        }
+    </script>
+</body>
+</html>
